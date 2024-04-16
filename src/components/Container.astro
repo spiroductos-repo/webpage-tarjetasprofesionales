@@ -1,0 +1,49 @@
+---
+import { Icon } from "astro-icon/components";
+import AccordionLayout from "../layouts/AccordionLayout.astro";
+import * as about from "../pages/about/about.md";
+import Card from "./Card.astro";
+import ContactCard from "./ContactCard.astro";
+const works = await Astro.glob("../pages/works/*.md");
+const projects = await Astro.glob("../pages/projects/*.md");
+const studies = await Astro.glob("../pages/studies/*.md");
+const certificates = await Astro.glob("../pages/certificates/*.md");
+const blogs = await Astro.glob("../pages/blogs/*.md");
+const contact = await Astro.glob("../pages/contact/*.md");
+const PDF = "/cv-20240219.pdf";
+---
+
+<div class="join join-vertical gap-1">
+  <div class="collapse-title font-extrabold tracking-tight md:text-2xl">
+    <a
+      class=""
+      href="https://api.whatsapp.com/send?phone=573216171010"
+      target="_blank"
+    >
+      <div class="flex">
+        <Icon name="carbon:moon" class="w-8 h-8 mr-4" />
+        Whatsapp
+      </div>
+    </a>
+  </div>
+  <div class="collapse-title font-extrabold tracking-tight md:text-2xl">
+    <a
+      class=""
+      href="https://api.whatsapp.com/send?phone=573216171010"
+      target="_blank"
+    >
+      <div class="flex">
+        <Icon name="mdi:computer" class="w-8 h-8 mr-4" />
+        Sitio Web
+      </div>
+    </a>
+  </div>
+  <div class="collapse-title font-extrabold tracking-tight md:text-2xl">
+    <a class="" href="https://www.youtube.com/@spiroductos" target="_blank">
+      <div class="flex">
+        <Icon name="mdi:computer" class="w-8 h-8 mr-4" />
+        Youtube
+      </div>
+    </a>
+  </div>
+</div>

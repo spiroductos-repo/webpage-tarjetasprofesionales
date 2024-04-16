@@ -1,0 +1,66 @@
+---
+import { Icon } from "astro-icon/components";
+import * as about from "../pages/about/about.md";
+---
+
+<header class="mx-auto pt-6 pb-2 relative">
+  <article
+    class="flex flex-col md:flex-col items-center gap-4 w-full max-w-2xl"
+  >
+    <div
+      class="flex-shrink-0 w-20 md:w-24 rounded-full shadow-sm overflow-hidden"
+    >
+      <img alt="avatar" src="/raffaella.webp" />
+      <!--
+      <img
+        alt="avatar"
+        src="/profile.webp"
+        class="grayscale-[50] hover:grayscale-0"
+      />  -->
+    </div>
+
+    <div class="text-center">
+      <div class="flex justify-center items-center mb-2 relative">
+        <h1 class="text-3xl font-extrabold tracking-tight md:text-3xl relative">
+          {about.frontmatter.name}
+        </h1>
+      </div>
+      <h2 class="text-lg text-secondary">
+        {about.frontmatter.designation}
+      </h2>
+      <div class="flex items-center justify-center mt">
+        <Icon name="carbon:location" class="w-4 h-4 mr-1" />
+        <p class="text-sm text-secondary">{about.frontmatter.email}</p>
+      </div>
+      <div class="flex items-center justify-center mt">
+        <Icon name="carbon:location" class="w-4 h-4 mr-1" />
+        <p class="text-sm text-secondary">+57 321 617 1010</p>
+      </div>
+
+      <div class="flex items-center justify-center mt">
+        <Icon name="carbon:location" class="w-4 h-4 mr-1" />
+        <p class="text-sm text-secondary">PBX: +57 (602) 524 6300</p>
+      </div>
+      <div class="flex items-center justify-center mt">
+        <a
+          href="https://www.google.com/maps/place/Spiroductos+S.A.S./@3.5051333,-76.5099538,15z/data=!4m2!3m1!1s0x0:0x5be385cda97e7cc0?sa=X&ved=1t:2428&ictx=111"
+          target="_blank"
+        >
+          <Icon name="carbon:location" class="w-4 h-4 mr-1" />
+          <p class="text-sm text-secondary">{about.frontmatter.location}</p>
+        </a>
+      </div>
+    </div>
+  </article>
+</header>
+
+<style>
+  @media (max-width: 768px) {
+    .flex-col.justify-end {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+</style>
