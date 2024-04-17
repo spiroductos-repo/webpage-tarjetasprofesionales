@@ -1,5 +1,4 @@
 ---
-import { Icon } from "astro-icon/components";
 import * as about from "../pages/about/about.md";
 ---
 
@@ -10,7 +9,7 @@ import * as about from "../pages/about/about.md";
     <div
       class="flex-shrink-0 w-20 md:w-24 rounded-full shadow-sm overflow-hidden"
     >
-      <img alt="avatar" src="/raffaella.webp" />
+      <img alt="avatar" src={import.meta.env.BASE_URL + "/raffaella.webp"} />
       <!--
       <img
         alt="avatar"
