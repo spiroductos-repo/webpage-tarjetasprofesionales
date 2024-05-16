@@ -13,61 +13,109 @@ const contact = await Astro.glob("../pages/contact/*.md");
 const PDF = "/cv-20240219.pdf";
 ---
 
-<div class="join join-vertical gap-1">
-  <div class="collapse-title font-extrabold tracking-tight md:text-2xl">
+<div class="join join-vertical gap-1 w-full">
     <a
-      class=""
-      href="https://api.whatsapp.com/send?phone=573216171010"
-      target="_blank"
+        class="link-container"
+        href="mailto:rduque@spiroductos.com"
+        target="_blank"
     >
-      <div class="flex">
-        <Icon name="logos:whatsapp-icon" class="w-8 h-8 mr-4" />
-        Whatsapp
-      </div>
+        <div class="flex">
+            <Icon name="mdi:email" class="w-8 h-8 mr-4" />
+            rduque@spiroductos.com
+        </div>
     </a>
-  </div>
-  <div class="collapse-title font-extrabold tracking-tight md:text-2xl">
-    <a class="" href="mailto:rduque@spiroductos.com" target="_blank">
-      <div class="flex">
-        <Icon name="mdi:email" class="w-8 h-8 mr-4" />
-        Correo
-      </div>
+
+    <a class="link-container" href="tel:+573216171010" target="_blank">
+        <div class="flex">
+            <Icon name="mdi:telephone-outline" class="w-8 h-8 mr-4" />
+            +57 321 6171010
+        </div>
     </a>
-  </div>
-  <div class="collapse-title font-extrabold tracking-tight md:text-2xl">
-    <a class="" href="https://spiroductos.co/" target="_blank">
-      <div class="flex">
-        <Icon name="mdi:computer" class="w-8 h-8 mr-4" />
-        Sitio Web
-      </div>
-    </a>
-  </div>
-  <div class="collapse-title font-extrabold tracking-tight md:text-2xl">
-    <a class="" href="https://www.youtube.com/@spiroductos" target="_blank">
-      <div class="flex">
-        <Icon name="logos:youtube-icon" class="w-8 h-8 mr-4" />
-        Youtube
-      </div>
-    </a>
-  </div>
-  <div class="collapse-title font-extrabold tracking-tight md:text-2xl">
+
     <a
-      class=""
-      href="https://www.google.com/maps/place/Spiroductos+S.A.S./@3.5054282,-76.5100512,14.25z/data=!4m6!3m5!1s0x8e30a8f3bbbf3261:0x5be385cda97e7cc0!8m2!3d3.5051333!4d-76.5099538!16s%2Fg%2F11f4rd5h4f?entry=ttu"
-      target="_blank"
+        class="link-container hover:bg-blue"
+        href="https://api.whatsapp.com/send?phone=573216171010"
+        target="_blank"
     >
-      <div class="flex">
-        <Icon name="logos:google-maps" class="w-8 h-8 mr-4" />
-        Google Maps
-      </div>
+        <div class="flex">
+            <Icon name="logos:whatsapp-icon" class="w-8 h-8 mr-4" />
+            Whatsapp
+        </div>
     </a>
-  </div>
-  <div class="collapse-title font-extrabold tracking-tight md:text-2xl">
-    <a class="" href="https://www.instagram.com/spiroductos/" target="_blank">
-      <div class="flex">
-        <Icon name="logos:instagram-icon" class="w-8 h-8 mr-4" />
-        Instagram
-      </div>
+
+    <a class="link-container" href="#">
+        <div class="flex">
+            <Icon name="mdi:printer-pos-outline" class="w-8 h-8 mr-4" />
+            PBX: +57 (602) 524 6300
+        </div>
     </a>
-  </div>
+
+    <a class="link-container" href="https://spiroductos.co/" target="_blank">
+        <div class="flex">
+            <Icon name="mdi:computer" class="w-8 h-8 mr-4" />
+            Sitio Web
+        </div>
+    </a>
+    <a
+        class="link-container"
+        href="https://www.google.com/maps/place/Spiroductos+S.A.S./@3.5054282,-76.5100512,14.25z/data=!4m6!3m5!1s0x8e30a8f3bbbf3261:0x5be385cda97e7cc0!8m2!3d3.5051333!4d-76.5099538!16s%2Fg%2F11f4rd5h4f?entry=ttu"
+        target="_blank"
+    >
+        <div class="flex">
+            <Icon name="logos:google-maps" class="w-8 h-8 mr-4" />
+            Calle 13 34-70, Bodega 1 Acopi, 760502, Yumbo, Colombia
+        </div>
+    </a>
+    <!--logos:linkedin-icon -->
+    <a
+        class="link-container"
+        href="https://co.linkedin.com/company/spiroductos"
+        target="_blank"
+    >
+        <div class="flex">
+            <Icon name="logos:linkedin-icon" class="w-8 h-8 mr-4" />
+            LinkedIn
+        </div>
+    </a>
+    <a
+        class="link-container"
+        href="https://www.youtube.com/@spiroductos"
+        target="_blank"
+    >
+        <div class="flex">
+            <Icon name="logos:youtube-icon" class="w-8 h-8 mr-4" />
+            Youtube
+        </div>
+    </a>
+
+    <a
+        class="link-container"
+        href="https://www.instagram.com/spiroductos/"
+        target="_blank"
+    >
+        <div class="flex">
+            <Icon name="logos:instagram-icon" class="w-8 h-8 mr-4" />
+            Instagram
+        </div>
+    </a>
+    <a
+        class="link-container"
+        href="https://www.facebook.com/spiroductos"
+        target="_blank"
+    >
+        <div class="flex">
+            <Icon name="logos:facebook" class="w-8 h-8 mr-4" />
+            Facebook
+        </div>
+    </a>
 </div>
+
+<style>
+    .link-container {
+        @apply collapse-title font-medium tracking-tight md:text-2xl w-full;
+    }
+
+    .link-container:hover {
+        @apply bg-[#d5dff8];
+    }
+</style>
