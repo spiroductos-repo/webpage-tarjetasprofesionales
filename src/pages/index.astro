@@ -47,7 +47,7 @@ const staff = await getCollection("staff");
                                     <div>{data.title}</div>
                                     <div>{data.company}</div>
                                 </div>
-                                <div class="m-2 ml-5 grid grid-cols-2 md:grid-cols-4 gap-3">
+                                <div class="m-2 ml-5 grid grid-cols-2 md:grid-cols-4 gap-1 md:gap-3">
                                     {data.links.map((d) => (
                                         <Icon
                                             name={d.iconName}
