@@ -1,0 +1,17 @@
+image: m.webp
+name: Michael Guerrero
+title: Integrador soluciones digitales
+company: Spiroductos S.A.S
+links:
+  - label: mguerrero@spiroductos.com
+    link: mailto:mguerrero@spiroductos.com
+    iconName: mdi:email
+    order: 1
+  - label: +57 321 6171010
+    link: tel:+573216171010
+    iconName: mdi:add-call
+    order: 2
+  - label: Whatsapp
+    link: https://api.whatsapp.com/send?phone=573216171010
+    iconName: mdi:whatsapp
+    order: 3

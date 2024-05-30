@@ -1,0 +1,27 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { href, iconName, label } = Astro.props;
+---
+
+<a class="link-container" href={href} target="_blank">
+    <div class="flex items-center text-lg">
+        <button
+            class="btn btn-circle flex flex-row items-center justify-center bg-[#124e91] mr-4"
+        >
+            <Icon name={iconName} class="w-6 h-6" style="color: white" />
+        </button>
+        {label}
+    </div>
+</a>
+
+<style>
+    .link-container {
+        @apply collapse-title font-medium tracking-tight md:text-2xl w-full;
+    }
+
+    .link-container:hover {
+        @apply bg-[#d5dff8];
+        color: black !important;
+    }
+</style>

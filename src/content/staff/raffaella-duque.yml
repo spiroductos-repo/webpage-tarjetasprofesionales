@@ -1,0 +1,17 @@
+image: raffaella.webp
+name: Rafaella Duque
+title: Auxiliar de ventas
+company: Spiroductos S.A.S
+links:
+  - label: rdque@spiroductos.com
+    link: mailto:rduque@spiroductos.com
+    iconName: mdi:email
+    order: 1
+  - label: +57 321 6171010
+    link: tel:+573216171010
+    iconName: mdi:add-call
+    order: 2
+  - label: Whatsapp
+    link: https://api.whatsapp.com/send?phone=573216171010
+    iconName: mdi:whatsapp
+    order: 3

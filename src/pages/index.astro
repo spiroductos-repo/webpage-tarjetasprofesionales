@@ -1,97 +1,67 @@
 ---
 import "@fontsource-variable/dm-sans";
-import Container from "../components/Container.astro";
 import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
 import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
+import { ViewTransitions } from "astro:transitions";
+
+const staff = await getCollection("staff");
 ---
 
 <html lang="gl">
     <head>
-        <script is:inline>
-            if (localStorage.getItem("theme") === null) {
-                document.documentElement.setAttribute("data-theme", "lofi");
-            } else
-                document.documentElement.setAttribute(
-                    "data-theme",
-                    localStorage.getItem("theme")
-                );
-        </script>
-        <script>
-            import { themeChange } from "theme-change";
-            themeChange();
-        </script>
         <meta charset="utf-8" />
         <link rel="icon" type="image/png" href="/favicon.webp" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="generator" content={Astro.generator} />
-        <title>Tarjeta profesional - Spiroductos</title>
+        <title>Tarjetas profesionales - Spiroductos</title>
+        <ViewTransitions />
     </head>
-    <body class="flex flex-col justify-center items-center bg-[#F7FAFC]">
+    <body class="flex flex-col justify-center items-center">
         <div
-            class="md:w-[440px] my-[20px] bg-white border border-[#E2E8F0] rounded-[16px] shadow-2xl shadow-[#999]"
+            class="w-full sm:w-[600px] flex flex-col gap-5 min-h-[80vh] justify-center"
         >
-            <Header />
-            <main>
-                <Container />
-            </main>
+            {
+                staff.map((s) => {
+                    const data = s.data;
+                    return (
+                        <a
+                            href={`${import.meta.env.BASE_URL}/${s.collection}/${s.id}`}
+                            class="group"
+                        >
+                            <div class="rounded-xl shadow-md flex flex-row transform transition duration-300 hover:scale-105 group-hover:bg-[#124e91] group-hover:text-[#fff]">
+                                <div class="avatar">
+                                    <div class="w-24 rounded-full m-2">
+                                        <img
+                                            src={
+                                                import.meta.env.BASE_URL +
+                                                `/${data.image}`
+                                            }
+                                        />
+                                    </div>
+                                </div>
+                                <div class="m-2 ml-5">
+                                    <div class="text-xl font-bold text-[#124e91] group-hover:text-[#fff]">
+                                        {data.name}
+                                    </div>
+                                    <div>{data.title}</div>
+                                    <div>{data.company}</div>
+                                </div>
+                                <div class="m-2 ml-5 grid grid-cols-2 md:grid-cols-4 gap-3">
+                                    {data.links.map((d) => (
+                                        <Icon
+                                            name={d.iconName}
+                                            class="w-6 h-6 text-[#124e91] group-hover:text-[#fff]"
+                                        />
+                                    ))}
+                                </div>
+                            </div>
+                        </a>
+                    );
+                })
+            }
         </div>
-
-        <button
-            class="action-button sticky bottom-5 animate-bounce text-lg flex flex-row gap-2"
-        >
-            <Icon name="mdi:contact-outline" class="w-8 h-8" />
-            Guardar contacto
-        </button>
 
         <Footer class="flex justify-center items-center py-4" />
     </body>
 </html>
-
-<style is:global>
-    .action-button {
-        @apply bg-[#124E91] font-bold p-3 rounded;
-        color: white;
-    }
-    body {
-        font-family: "DM Sans Variable", sans-serif;
-    }
-
-    @media (min-width: 768px) {
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-        }
-    }
-
-    @media only screen and (max-width: 480px) {
-        * {
-            font-size: 12px;
-        }
-    }
-
-    .overflow-y-scroll::-webkit-scrollbar {
-        width: 3px;
-    }
-
-    .overflow-y-scroll::-webkit-scrollbar-thumb {
-        background-color: oklch(var(--s));
-    }
-
-    .overflow-y-scroll {
-        scrollbar-width: 1px;
-    }
-
-    @media (max-width: 768px) {
-        .container {
-            flex-direction: column;
-        }
-    }
-
-    @media (min-width: 768px) {
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-        }
-    }
-</style>
